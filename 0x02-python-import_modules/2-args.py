@@ -8,7 +8,7 @@ def print_arguments(argv):
     if num_args == 0:
         print("0 arguments.")
     else:
-        print(f"{num_args} argument{'s:' if num_args > 1 else ''}")
+        print(f"{num_args} argument{':' if num_args == 1 else 's:'}")
         for i, arg in enumerate(argv, start=1):
             print(f"{i}: {arg}")
 
