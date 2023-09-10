@@ -1,5 +1,7 @@
 #include <stdio.h>
-#include "python.h"
+#include <python.h>
+#include <object.h>
+#include <listobject.h>
 
 void print_python_list_info(PyObject *p)
 {
@@ -16,6 +18,7 @@ void print_python_list_info(PyObject *p)
     while (i < ob_base.ob_size)
     {
         printf("Element %d: %s\n", i, pp->ob_item[i]->ob_type->tp_name);
+	i++;
     }
 
 }
