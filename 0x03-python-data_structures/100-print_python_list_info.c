@@ -1,31 +1,24 @@
+#define PY_SSIZE_T_CLEAN
 #include <stdio.h>
-#include <python.h>
-<<<<<<< HEAD
-#include <object.h>
-#include <listobject.h>
-=======
->>>>>>> 72e94a071cd397d97e3878312c31e52a963df49f
+#include <Python.h>
 
 void print_python_list_info(PyObject *p)
 {
-    int i;
-    PyListObject *pp
+	Py_ssize_t size, i;
+	PyObject *item;
 
-    pp = (PyListObject *)p;
+	size = PyList_Size(p);
 
-    printf("[*] Size of the Python List = %ld\n", pp->ob_base.ob_size);
-    printf("[*] Allocated = %ld\n", pp->allocated);
+    printf("[*] Size of the Python List = %zd\n", size);
+    printf("[*] Allocated = %zd\n", ((PyListObject *)p)->allocated);
 
     i = 0;
 
-    while (i < ob_base.ob_size)
+    while (i < size)
     {
-        printf("Element %d: %s\n", i, pp->ob_item[i]->ob_type->tp_name);
-<<<<<<< HEAD
+	item = PyList_GetItem(p, i);
+        printf("Element %zd: %s\n", i, Py_TYPE(item)->tp_name);
 	i++;
-=======
-        i++;
->>>>>>> 72e94a071cd397d97e3878312c31e52a963df49f
     }
 
 }
