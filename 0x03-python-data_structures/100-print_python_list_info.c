@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <python.h>
-<<<<<<< HEAD
 #include <object.h>
 #include <listobject.h>
-=======
->>>>>>> 72e94a071cd397d97e3878312c31e52a963df49f
+
+/**
+ * print_python_list_info - function
+ * @p: PyOject
+*/
 
 void print_python_list_info(PyObject *p)
 {
@@ -21,11 +23,7 @@ void print_python_list_info(PyObject *p)
     while (i < ob_base.ob_size)
     {
         printf("Element %d: %s\n", i, pp->ob_item[i]->ob_type->tp_name);
-<<<<<<< HEAD
-	i++;
-=======
         i++;
->>>>>>> 72e94a071cd397d97e3878312c31e52a963df49f
     }
 
 }
