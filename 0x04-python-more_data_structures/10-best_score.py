@@ -12,7 +12,7 @@ def best_score(a_dictionary):
     if a_dictionary:
         best_value = list(a_dictionary.values())[0]
         for key, value in a_dictionary.items():
-            if best_value >= best_value:
+            if value >= best_value:
                 best_key = key
                 best_value = value
 
