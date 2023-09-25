@@ -9,7 +9,7 @@ element by element 2 lists.
 def list_division(my_list_1, my_list_2, list_length):
     new_list = []
 
-    for i in range(list_length):
+    for i in range(0, list_length):
         try:
             new = (my_list_1[i] / my_list_2[i])
         except TypeError:
@@ -24,4 +24,4 @@ def list_division(my_list_1, my_list_2, list_length):
         finally:
             new_list.append(new)
 
-        return new_list
+    return new_list
