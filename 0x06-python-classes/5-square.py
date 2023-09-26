@@ -38,7 +38,7 @@ class Square:
         return self.__size
 
     @size.setter
-    def __init__(self, value):
+    def size(self, value):
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -54,8 +54,7 @@ class Square:
 
     def my_print(self):
         """
-        Method prints in stdout the
-        square with the character #
+        Method prints in stdout the square with the character #
         """
         if self.__size == 0:
             print()
