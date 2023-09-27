@@ -4,7 +4,7 @@ Magic class module
 import math
 
 
-class _MagicClass:
+class MagicClass:
     """
     Magic Class
     Attributes:
