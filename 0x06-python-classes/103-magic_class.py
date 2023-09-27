@@ -6,7 +6,7 @@ import math
 
 class MagicClass:
     """
-    Magic Class
+    Magic class
 
     Attributes:
         radius (int): integer
