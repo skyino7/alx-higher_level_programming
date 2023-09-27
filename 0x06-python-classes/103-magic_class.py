@@ -20,7 +20,7 @@ class MagicClass:
             radius (int): integer
 
         Raises:
-            Typeerror: not an int
+            TypeError: not an int
         """
 
         self.__radius = 0
@@ -30,8 +30,8 @@ class MagicClass:
 
     def area(self):
         """float: area"""
-        return 2 ** self.__radius * math.pi
+        return (self.__radius ** 2) * math.pi
 
     def circumference(self):
         """float: circumference"""
-        return 2 * math.pi * self.__radius
+        return (math.pi * 2) * self.__radius
