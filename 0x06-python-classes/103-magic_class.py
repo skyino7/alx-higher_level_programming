@@ -12,7 +12,7 @@ class MagicClass:
         radius (int): integer
     """
 
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """
         init
 
@@ -23,7 +23,8 @@ class MagicClass:
             Typeerror: not an int
         """
 
-        if not isinstance(radius, (int, float)):
+        self.__radius = 0
+        if type(radius) is not int:
             raise TypeError("radius must be a number")
         self.__radius = radius
 
