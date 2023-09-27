@@ -30,8 +30,10 @@ class MagicClass:
 
     def area(self):
         """float: area"""
+
         return (self.__radius ** 2) * math.pi
 
     def circumference(self):
         """float: circumference"""
+
         return (math.pi * 2) * self.__radius
