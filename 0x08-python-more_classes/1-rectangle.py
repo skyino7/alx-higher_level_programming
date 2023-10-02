@@ -8,6 +8,8 @@
 
 class Rectangle:
     """
+        width(int): int
+        height(int): int
 
     """
 
