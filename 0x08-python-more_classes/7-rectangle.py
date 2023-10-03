@@ -98,10 +98,10 @@ class Rectangle:
         rectangle_str = ""
 
         if self.__width == 0 or self.__height == 0:
-            return ""
+            return rectangle_str
 
         for i in range(self.__height):
-            rectangle_str += '#' * self.__width
+            rectangle_str += str(self.print_symbol) * self.__width
             if i != self.__height - 1:
                 rectangle_str += '\n'
 
