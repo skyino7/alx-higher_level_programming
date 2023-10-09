@@ -3,5 +3,26 @@
 """
 Module
 """
+Rectangle = __import__('9-rectangle').Rectangle
 
-Square = __import__('10-square').Square
+
+class Square(Rectangle):
+    """
+    Class
+
+    Args:
+        Rectangle (int): Rectangle
+    """
+
+    def __init__(self, size):
+        """
+        Args:
+            size (int): size
+        """
+        super().integer_validator("size", size)
+        self.__size = size
+        super().__init__(size, size)
+
+    def area(self):
+        """area"""
+        return super().area()
