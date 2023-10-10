@@ -12,4 +12,3 @@ def read_file(filename=""):
     with open(filename, encoding='utf-8') as file:
         for text in file:
             print(text, end="")
-        print()
