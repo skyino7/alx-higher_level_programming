@@ -7,14 +7,14 @@ def add_attr(obj, name, value):
     adds a new attribute to an object
 
     Args:
-        obj (object): _description_
-        name (str): _description_
-        value (int): _description_
+        obj (object): obj
+        name (str): name
+        value (int): value
 
     Raises:
-        TypeError: _description_
+        TypeError: can't add new attribute
     """
-    if not hasattr(obj, '__dict__'):
+    if not hasattr(obj, "__dict__"):
         raise TypeError("can't add new attribute")
     else:
         setattr(obj, name, value)
