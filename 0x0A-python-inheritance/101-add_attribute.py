@@ -2,7 +2,7 @@
 """Module"""
 
 
-def add_attr(obj, name, value):
+def add_attribute(obj, name, value):
     """
     adds a new attribute to an object
 
