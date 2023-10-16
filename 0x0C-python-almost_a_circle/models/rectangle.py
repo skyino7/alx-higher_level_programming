@@ -1,4 +1,4 @@
-# models/rectangle.py
+#!/usr/bin/python3
 """
 Module Doc
 """
