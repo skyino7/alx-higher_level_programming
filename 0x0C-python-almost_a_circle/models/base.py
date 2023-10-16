@@ -15,7 +15,6 @@ class Base:
     def __init__(self, id=None):
         """
         Doc
-
         """
         if id is not None:
             self.id = id
@@ -26,7 +25,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """
-        Return the JSON list_dictionaries.
+        to json string doc
         """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
@@ -35,7 +34,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """
-        Write the JSON string representation of list_objs to a file.
+        save to file doc
         """
         filename = cls.__name__ + ".json"
         json_string = "[]"
@@ -48,7 +47,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """
-        Return the list of the JSON string representation json_string.
+        from json string doc
         """
         if json_string is None or json_string == "":
             return []
@@ -57,7 +56,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """
-        Return an instance with all attributes already set.
+        create doc
         """
         if cls.__name__ == 'Rectangle':
             dummy = cls(1, 1)
@@ -72,7 +71,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """
-        Load instances from a file and return a list of objects.
+        lod from file doc
         """
         filename = cls.__name__ + ".json"
         try:
@@ -85,7 +84,7 @@ class Base:
 
     def update(self, *args, **kwargs):
         """
-        Assign arguments to each attribute.
+        update doc
         """
         if args:
             attributes = ['id', 'width', 'height', 'x', 'y']

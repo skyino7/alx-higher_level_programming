@@ -123,7 +123,8 @@ class Rectangle(Base):
         """
         __str__ Doc
         """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        restr = "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"
+        return restr.format(self.id, self.x, self.y, self.width, self.height)
 
     def to_dictionary(self):
         """
