@@ -90,21 +90,21 @@ class Rectangle(Base):
         Validate integer Doc
         """
         if not isinstance(value, int):
-            raise TypeError(f"{attribute_name} must be an integer.")
+            raise TypeError(f"{attribute_name} must be an integer")
 
     def validate_positive(self, value, attribute_name):
         """
         Validate positive Doc
         """
         if value <= 0:
-            raise ValueError(f"{attribute_name} must be > 0.")
+            raise ValueError(f"{attribute_name} must be > 0")
 
     def val_non(self, value, attribute_name):
         """
         Validate non-negative Doc
         """
         if value < 0:
-            raise ValueError(f"{attribute_name} must be >= 0.")
+            raise ValueError(f"{attribute_name} must be >= 0")
 
     def area(self):
         """
