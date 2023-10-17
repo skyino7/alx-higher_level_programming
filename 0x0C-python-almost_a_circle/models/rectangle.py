@@ -149,3 +149,10 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    @classmethod
+    def create(cls, *args, **kwargs):
+        """
+        create doc
+        """
+        return cls(*args, **kwargs)

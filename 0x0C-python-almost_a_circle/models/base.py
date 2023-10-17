@@ -3,6 +3,7 @@
 Module
 """
 import json
+import csv
 
 
 class Base:
@@ -76,9 +77,42 @@ class Base:
         filename = cls.__name__ + ".json"
         try:
             with open(filename, mode='r', encoding='utf-8') as file:
-                json_string = file.read()
-                list_of_dicts = cls.from_json_string(json_string)
-                return [cls.create(**d) for d in list_of_dicts]
+                dict_list = cls.from_json_string(file.read())
+                return [cls.create(**obj) for obj in dict_list]
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        save to file csv doc
+        """
+        filename = cls.__name__ + ".csv"
+        with open(filename, mode='w', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            if list_objs is not None:
+                for obj in list_objs:
+                    if cls.__name__ == "Rectangle":
+                        row = [obj.id, obj.width, obj.height, obj.x, obj.y]
+                    elif cls.__name__ == "Square":
+                        row = [obj.id, obj.size, obj.x, obj.y]
+                    writer.writerow(row)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        load from file csv doc
+        """
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, mode='r', encoding='utf-8') as file:
+                reader = csv.reader(file)
+                instances = []
+                for row in reader:
+                    instance = cls.create(*(int(value) for value in row))
+                    instances.append(instance)
+
+                return instances
         except FileNotFoundError:
             return []
 
