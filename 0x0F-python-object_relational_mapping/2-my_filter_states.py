@@ -17,7 +17,7 @@ def main():
     cursor = db.cursor()
 
     query = "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC"
-    arg = query.format(argv[4])
+    arg = query.format(argv[4]).strip("")
 
     cursor.execute(arg)
 
