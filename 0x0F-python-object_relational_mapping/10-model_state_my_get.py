@@ -23,7 +23,8 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    qs = (session.query(State).filter(State.name == stateName).order_by(State.id).all())
+    qs = (session.query(State).filter(State.name == stateName)
+          .order_by(State.id).all())
 
     if qs:
         print(qs[0].id)
