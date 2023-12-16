@@ -16,7 +16,7 @@ def main():
                          passwd=argv[2], db=argv[3], charset="utf8")
     cursor = db.cursor()
 
-    query = "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC"
     arg = query.format(argv[4]).strip("")
 
     cursor.execute(arg)
