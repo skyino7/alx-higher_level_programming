@@ -16,7 +16,9 @@ def main():
                          passwd=argv[2], db=argv[3], charset="utf8")
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+    q = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
+
+    cursor.execute(q)
 
     for row in cursor.fetchall():
         print(row)
