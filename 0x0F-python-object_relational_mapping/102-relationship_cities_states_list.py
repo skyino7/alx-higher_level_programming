@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-"""Module Docs"""
+"""Module to list all City objects from
+the database hbtn_0e_101_usa"""
 
 from relationship_state import Base, State
 from relationship_city import City
@@ -10,8 +11,8 @@ from sys import argv
 
 
 def main():
-    """creates the State “California” with the City “San Francisco”
-    from the database hbtn_0e_100_usa: (100-relationship_states_cities.py)"""
+    """Function to list all City objects from
+    the database hbtn_0e_101_usa"""
 
     dbUser = argv[1]
     dbPass = argv[2]
@@ -24,12 +25,10 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).order_by(State.id).all()
+    cities = session.query(City).order_by(City.id).all()
 
-    for state in states:
-        print("{}: {}".format(state.id, state.name))
-        for city in state.cities:
-            print("\t{}: {}".format(city.id, city.name))
+    for city in cities:
+        print("{}: {} -> {}".format(city.id, city.name, city.state.name))
 
     session.commit()
     session.close()
