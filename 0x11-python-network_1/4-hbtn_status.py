@@ -11,7 +11,5 @@ if __name__ == "__main__":
     response = requests.get(Url)
     html = response.text
 
-    print("Body response:")
-    print("\t- type: {}".format(type(html)))
-    print("\t- content: {}".format(html))
-    print("\t- utf8 content: {}".format(html))
+    getType = type(html)
+    print(f"Body response:\n\t- type: {getType}\n\t- content: {html}")
