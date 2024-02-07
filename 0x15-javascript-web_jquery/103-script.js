@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     function fetchTranslation () {
         let langCode = $('#language_code').val();
-        const url = `https://fourtonfish.com/hellosalut/?lang=${langCode}`;
+        const url = `https://www.fourtonfish.com/hellosalut/hello/?lang=${langCode}`;
         $.get(url, function (data) {
             $('div#hello').text(data.hello);
         });
